@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+body {
+    color: var(--Black-900, #191919);
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    background: #f4f4f4;
+}
+
+.container {
+    width: 1216px;
+    margin: 0px auto;
+}
+
+.block {
+    border-radius: 16px;
+    padding: 24px;
+}

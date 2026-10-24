@@ -1,0 +1,22 @@
+.questions__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    list-style: none;
+}
+.questions__item {
+    justify-content: center;
+}
+.pagination {
+    display: flex;
+    column-gap: 5px;
+}
+.pagination__btn {
+    padding: 3px 6px;
+    max-width: 45px;
+}
+.pagination__btn--active{
+    border-radius: 2px;
+    background: var(--Purple-700, #6A0BFF);
+    color: #fff;
+}

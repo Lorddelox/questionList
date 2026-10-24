@@ -1,0 +1,10 @@
+.category__btn{
+    padding: 12px;
+    gap: 8px;
+    border-radius: 12px;
+    border: 1px solid var(--Black-200, #BABABA);
+}
+.category__btn--active{
+    transition: 0.3s;
+    border: 1px solid var(--Purple-700, #6A0BFF);
+}
