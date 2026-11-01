@@ -18,11 +18,14 @@
     max-height: 0;  
     overflow: hidden;
     transition: max-height .3s ease-in-out;
+    visibility: hidden;   
 }
 .questions__item-enter--open {
-     max-height: 1000px;      
+     max-height: 1000px;   
+     visibility: visible;     
 }
 .questions__item-header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

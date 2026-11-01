@@ -1,8 +1,8 @@
-const paginaiton = (totalPages, currentPage, range) => {
+const paginaiton = (totalPages, currentPage, range = 2) => {
     const firstElement = 1
     const result = [firstElement];
 
-    if (currentPage - range >= 2)
+    if (currentPage - range > 2)
         result.push("...");
 
     for (let i = currentPage - range; i <= currentPage + range; i++) {
@@ -10,7 +10,7 @@ const paginaiton = (totalPages, currentPage, range) => {
             result.push(i)
     }
 
-    if (currentPage + range <= totalPages - 1)
+    if (currentPage + range < totalPages - 1)
         result.push("...");
     if (totalPages !== 0 && firstElement !== totalPages)
         result.push(totalPages)

@@ -1,4 +1,5 @@
 const createQueryParams = (selected, params) => {
+
     for (const [key, value] of Object.entries(selected)) {
         params[key] = value.join(",")
     }
@@ -9,6 +10,8 @@ const createQueryParams = (selected, params) => {
             queryParams.set(key, value)
         }
     });
+
+    return queryParams.toString();
 }
 
 export default createQueryParams

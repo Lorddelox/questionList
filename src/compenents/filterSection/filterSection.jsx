@@ -6,17 +6,18 @@ import FilterBlock from "../filterBlock/filterBlock"
 import { staticData } from "../../helpers/staticData"
 
 const FilterSection = () => {
-    const { setSearchTerm } = useContext(AppContext);
+    const { searchTerm, setSearchTerm, setCurrentPage } = useContext(AppContext);
     const [inputValue, setInputValue] = useState("");
     const debouncedValue = useDebaunce(inputValue, 500);
     const { selected } = useContext(AppContext);
     const { specializationId } = selected
 
+
     useEffect(() => {
-        if (debouncedValue) {
-            setSearchTerm(debouncedValue);
-        }
-    }, [debouncedValue, setSearchTerm]);
+        setSearchTerm(debouncedValue);
+        setCurrentPage(1);
+    }, [debouncedValue]);
+
 
 
     const handleSearchChange = (e) => {
@@ -26,7 +27,8 @@ const FilterSection = () => {
 
     return (
         <aside className="aside block">
-            <input type="text" value={inputValue} onChange={handleSearchChange} />
+            <label htmlFor="search">Поиск</label>
+            <input type="text" value={inputValue} onChange={handleSearchChange} id="search" />
             <FilterBlock title={"Специализация"}
                 source={`https://api.yeatwork.ru/specializations`} filterKey={"specializationId"} isMultiple={false} />
             {specializationId.length !== 0 ?

@@ -11,7 +11,7 @@ const useDebaunce = (state, delay) => {
         }, delay)
 
         return () => clearTimeout(timerId.current)
-    }, [state])
+    }, [state, delay])
     return debauncedState
 }
 

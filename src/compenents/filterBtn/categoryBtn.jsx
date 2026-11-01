@@ -3,8 +3,9 @@ import "./categoryBtn.css"
 const CategoryBtn = ({ name, id, skillState }) => {
     const { selected, setSelected, isMultiple } = skillState;
 
+    const isSelected = selected.includes(id);
+
     const handleClick = () => {
-        const isSelected = selected.includes(id)
         if (!isMultiple) {
             return isSelected ? setSelected([]) : setSelected([id])
         }
@@ -14,8 +15,8 @@ const CategoryBtn = ({ name, id, skillState }) => {
     }
 
     return (
-        <button className={`category__btn ${selected.includes(id)
-            ? "category__btn--active" : ""}`} onClick={handleClick}>
+        <button className={`category__btn ${isSelected
+            ? "category__btn--active" : ""}`} onClick={handleClick} aria-pressed={isSelected}>
             {name}
         </button>
     )

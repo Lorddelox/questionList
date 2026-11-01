@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import ICONS from "../../ui/icons"
 import paginaiton from "../../helpers/pagination";
 
-const PaginationSection = ({ currentPage, totalPages, handlePaginationClick, range = 2 }) => {
+const PaginationSection = ({ currentPage, totalPages, handlePaginationClick }) => {
     if (!totalPages) return;
 
-    const paginationItems = paginaiton(totalPages, currentPage, range);
+    const paginationItems = paginaiton(totalPages, currentPage);
 
     return (
         <div className="questions__list-pagination pagination" >
@@ -14,7 +14,8 @@ const PaginationSection = ({ currentPage, totalPages, handlePaginationClick, ran
                     if (typeof (page) === "number")
                         return (
                             <button key={index} onClick={() => handlePaginationClick(page)}
-                                className={`pagination__btn ${page === currentPage ? "pagination__btn--active" : ""}`}>
+                                className={`pagination__btn ${page === currentPage ? "pagination__btn--active" : ""}`}
+                                aria-current={page === currentPage ? "page" : undefined}>
                                 {page}
                             </button>
                         )
